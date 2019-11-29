@@ -13,5 +13,11 @@ pipeline {
       }
     }
 
+    stage('cde') {
+      steps {
+        sh 'scp /home/ubuntu/.jenkins/workspace/mywebapp_master/webapp/target/webapp.war ubuntu@172.31.29.5:/var/lib/tomcat8/webapps/qaapp.war'
+      }
+    }
+
   }
 }
