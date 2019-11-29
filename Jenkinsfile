@@ -28,7 +28,7 @@ pipeline {
 
     stage('delivery') {
       steps {
-        sh 'scp /home/ubuntu/.jenkins/workspace/mywebapp_master/target/webapp.war ubuntu@172.31.21.193:/var/lib/tomcat8/webapps/proapp.war'
+        sh 'scp /home/ubuntu/.jenkins/workspace/mywebapp_master/webapp/target/webapp.war ubuntu@172.31.21.193:/var/lib/tomcat8/webapps/proapp.war'
       }
     }
 
