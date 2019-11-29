@@ -31,6 +31,13 @@ pipeline {
         sh 'scp /home/ubuntu/.jenkins/workspace/mywebapp_master/webapp/target/webapp.war ubuntu@172.31.21.193:/var/lib/tomcat8/webapps/proapp.war'
       }
     }
+    post {
+    failure {
+        mail to: 'reddyamarnathh@gmail.com',
+             subject: "Failed Pipeline: ${currentBuild.fullDisplayName}",
+             body: "Something is wrong with ${env.BUILD_URL}"
+     }
+    }
 
   }
 }
