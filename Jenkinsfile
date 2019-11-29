@@ -19,5 +19,12 @@ pipeline {
       }
     }
 
+    stage('') {
+      steps {
+        git(url: 'https://github.com/selenium-saikrishna/FunctionalTesting.git', branch: 'master')
+        sh 'java -jar /home/ubuntu/.jenkins/workspace/mywebapp_master/testing.jar'
+      }
+    }
+
   }
 }
