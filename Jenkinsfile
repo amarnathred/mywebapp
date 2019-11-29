@@ -7,5 +7,11 @@ pipeline {
       }
     }
 
+    stage('cb') {
+      steps {
+        sh 'mvn package'
+      }
+    }
+
   }
 }
